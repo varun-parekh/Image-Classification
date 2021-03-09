@@ -8,5 +8,6 @@
 3. Download a test image and update the path accordingly.
 
 Link to labels.npy - https://drive.google.com/file/d/1tYLrN64oEyXxLd0WqXhrfb_x7XafnBMk/view?usp=sharing
+
 Link to train.npy - https://drive.google.com/file/d/1wyBbYrs-X3yidTF8GY_w41PQE9dS9w3v/view?usp=sharing
 
