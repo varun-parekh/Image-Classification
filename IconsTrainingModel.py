@@ -20,14 +20,14 @@ class IconTrainingModel:
         msk=np.array(class_name)
         return img_data_array, class_name
 
-    def target_val(y_train)
+    def target_val(y_train):
         target_dict={k: v for v, k in enumerate(np.unique(y_train))}
         target_dict
         target_val=  [target_dict[y_train[i]] for i in range(len(y_train))]
         print(target_val)
         return target_val
     
-    def cnn_model(num_classes)
+    def cnn_model(num_classes):
         model = Sequential([
         layers.Conv2D(16, 3, padding='same', activation='relu'),
         layers.MaxPooling2D(),
@@ -41,10 +41,8 @@ class IconTrainingModel:
         ])
         return model
 
-    def train_model(model, epoch, x_train, target_val, batch_size, verbose)
-        model.compile(optimizer='adam',
-            loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-            metrics=['accuracy'])
-        history = model.fit(x_train,np.array(target_val), batch_size=10, epochs=5, verbose=1)\
+    def train_model(model, epoch, x_train, target_val, batch_size, verbose):
+        model.compile(optimizer='adam',loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),metrics=['accuracy'])
+        history = model.fit(x_train,np.array(target_val), batch_size=10, epochs=5, verbose=1)
         return history
        
