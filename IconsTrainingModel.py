@@ -41,8 +41,9 @@ class IconTrainingModel:
         ])
         return model
 
-    def train_model(model, epoch, x_train, target_val, batch_size, verbose):
+    def train_model(model, x_train, target_val):
         model.compile(optimizer='adam',loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),metrics=['accuracy'])
         history = model.fit(x_train,np.array(target_val), batch_size=10, epochs=5, verbose=1)
         return history
        
+    
