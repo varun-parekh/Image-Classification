@@ -8,10 +8,14 @@ app = Flask(__name__)
 CORS(app)
 
 parser = reqparse.RequestParser()
-model = IconTrainingModel()
+model_class = IconTrainingModel()
 
 def trainIconModel(payload):
-    return model.help()
+    img_array, class_name=model_class.create_dataset(payload)
+    n=len(payload)
+    models=model_class.cnn_model(n)
+    final=model_class.train_model(models, img_array, class_name)
+    return final
 
 @app.route(API_URL_PREFIX + 'learn/icon', methods=['GET'])
 def learnIcon():
